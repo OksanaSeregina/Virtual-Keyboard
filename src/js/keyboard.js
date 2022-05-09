@@ -10,7 +10,11 @@ const main = generate("main", "", [
     "subtitle",
     "The keyboard was created in the Windows operating system"
   ),
-  generate("p", "hint", "To switch the language combination: left ctrl + alt"),
+  generate(
+    "p",
+    "help-text",
+    "To switch the language combination: left ctrl + alt"
+  ),
 ]);
 
 export default class Keyboard {
