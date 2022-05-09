@@ -5,42 +5,42 @@ export default function generate(
   parentElem,
   ...dataAttr
 ) {
-  let element = null;
+  let elem = null;
   try {
-    element = document.createElement(htmlElem);
+    elem = document.createElement(htmlElem);
   } catch (error) {
     throw new Error("Give the correct html element name");
   }
 
-  if (classNames) element.classList.add(...classNames.split(" "));
+  if (classNames) elem.classList.add(...classNames.split(" "));
 
   if (children && Array.isArray(children)) {
     children.forEach(
-      (childElement) => childElement && element.appendChild(childElement)
+      (childElement) => childElement && elem.appendChild(childElement)
     );
   } else if (children && typeof children === "object") {
-    element.appendChild(children);
+    elem.appendChild(children);
   } else if (children && typeof children === "string") {
-    element.innerHTML = children;
+    elem.innerHTML = children;
   }
 
   if (parentElem) {
-    parentElem.appendChild(element);
+    parentElem.appendChild(elem);
   }
 
   if (dataAttr.length) {
     dataAttr.forEach(([attrName, attrValue]) => {
       if (attrValue === "") {
-        element.setAttribute(attrName, "");
+        elem.setAttribute(attrName, "");
       }
       if (
         attrName.match(/value|id|placeholder|cols|rows|autocorrect|spellcheck/)
       ) {
-        element.setAttribute(attrName, attrValue);
+        elem.setAttribute(attrName, attrValue);
       } else {
-        element.dataset[attrName] = attrValue;
+        elem.dataset[attrName] = attrValue;
       }
     });
   }
-  return element;
+  return elem;
 }
