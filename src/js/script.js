@@ -1,5 +1,7 @@
-import { get } from "./local-storage.js";
-import Keyboard from "./keyboard.js";
+import { get } from "./local-storage";
+import Keyboard from "./keyboard";
+
+import "../style/style.css";
 
 const stringSorter = [
   [

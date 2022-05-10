@@ -1,13 +1,19 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
+    node: true,
   },
-  extends: ["airbnb-base"],
   parser: "babel-eslint",
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+  extends: ["eslint-config-airbnb-base", "eslint-config-prettier"],
+  settings: {
+    "import/resolver": {
+      webpack: { config: "webpack.config.js" }
+    }
   },
-  rules: {},
+  rules: {
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-param-reassign": 0
+  },
 };

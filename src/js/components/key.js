@@ -1,4 +1,4 @@
-import generate from "../generate.js";
+import generate from "../generate";
 
 export default class Key {
   constructor({ mainCaps, specialCaps, code }) {

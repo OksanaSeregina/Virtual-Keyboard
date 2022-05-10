@@ -1,7 +1,7 @@
-import * as localSorage from "./local-storage.js";
-import generate from "./generate.js";
-import languageSelect from "./languages/index-lang.js";
-import Key from "./components/key.js";
+import * as localSorage from "./local-storage";
+import generate from "./generate";
+import languageSelect from "./languages/index-lang";
+import Key from "./components/key";
 
 const main = generate("main", "", [
   generate("h1", "title", "RSS Virtual Keyboard"),
